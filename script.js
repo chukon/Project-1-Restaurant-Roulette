@@ -78,6 +78,7 @@ function searchWeather(name) {
 }
 
 function getCityID() {
+  document.getElementById("restaurantinfo-div").innerHTML = "";
   //function to extract cityID of user input from zomato api
   var userInput = $("#city-input").val();
   var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + userInput;
@@ -108,7 +109,6 @@ function getCityID() {
           "user-key": "6be02bb0652cc2706beef4c9ffe979b1",
         },
       }).then(function (response) {
-        $("#restaurantinfo-div").empty();
         var randomInd = Math.floor(Math.random() * 20);
 
         var randomRestaurant = response.restaurants[randomInd].restaurant.name;
