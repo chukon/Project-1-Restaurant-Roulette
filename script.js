@@ -108,6 +108,7 @@ function getCityID() {
           "user-key": "6be02bb0652cc2706beef4c9ffe979b1",
         },
       }).then(function (response) {
+        $("#restaurantinfo-div").empty();
         var randomInd = Math.floor(Math.random() * 20);
 
         var randomRestaurant = response.restaurants[randomInd].restaurant.name;
@@ -131,7 +132,6 @@ function getCityID() {
         restaurantEl.attr("target", "_blank");
         locLink.attr("href", "https://google.com/maps/place/" + restLocation.replace(/\s+/g, "+"));
         locLink.attr("target", "_blank");
-        $("#restaurantinfo-div").remove();
         $("#restaurantinfo-div").append(restaurantEl,"<br>" , locLink, ratingEl, cuisineEl, menuEl, timingEl, featImg);
       });
     }
