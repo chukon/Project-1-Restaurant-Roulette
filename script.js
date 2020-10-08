@@ -131,7 +131,7 @@ function getCityID() {
         restaurantEl.attr("target", "_blank");
         locLink.attr("href", "https://google.com/maps/place/" + restLocation.replace(/\s+/g, "+"));
         locLink.attr("target", "_blank");
-        document.getElementById("restaurantinfo-div").innerHTML = "";
+        $("#restaurantinfo-div").remove();
         $("#restaurantinfo-div").append(restaurantEl,"<br>" , locLink, ratingEl, cuisineEl, menuEl, timingEl, featImg);
       });
     }
