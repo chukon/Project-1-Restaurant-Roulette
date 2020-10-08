@@ -78,7 +78,6 @@ function searchWeather(name) {
 }
 
 function getCityID() {
-  document.getElementById("restaurantinfo-div").innerHTML = "";
   //function to extract cityID of user input from zomato api
   var userInput = $("#city-input").val();
   var queryURL = "https://developers.zomato.com/api/v2.1/cities?q=" + userInput;
@@ -143,6 +142,7 @@ function getCityID() {
 $("#select-city").on("click", function (event) {
   // creating the on click event to take in the user input city value
   event.preventDefault();
+ document.getElementById("restaurantinfo-div").innerHTML = "";
   var inputCity = $("#city-input").val().trim();
 
   searchWeather(inputCity);
