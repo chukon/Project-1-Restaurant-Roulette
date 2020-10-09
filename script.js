@@ -131,7 +131,9 @@ function getCityID() {
         restaurantEl.attr("target", "_blank");
         locLink.attr("href", "https://google.com/maps/place/" + restLocation.replace(/\s+/g, "+"));
         locLink.attr("target", "_blank");
-        $("#restaurantinfo-div").append(restaurantEl,"<br>" , locLink, ratingEl, cuisineEl, menuEl, timingEl, featImg);
+        //$("#restaurantinfo-div").append(restaurantEl,"<br>" , locLink, ratingEl, cuisineEl, menuEl, timingEl, featImg);
+        document.getElementById("restaurantinfo-div").innerHTML = "";
+         document.getElementById("restaurantinfo-div").innerHTML = restaurantEl + "<br>" + locLink + "<br>" + ratingEl + "<br>" + cuisineEl + "<br>" + menuEl + "<br>" + timingEl + "<br>" + featImg;
       });
     }
 
@@ -142,7 +144,7 @@ function getCityID() {
 $("#select-city").on("click", function (event) {
   // creating the on click event to take in the user input city value
   event.preventDefault();
- document.getElementById("restaurantinfo-div").innerHTML = "";
+ 
   var inputCity = $("#city-input").val().trim();
 
   searchWeather(inputCity);
