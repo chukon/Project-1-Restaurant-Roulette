@@ -151,3 +151,11 @@ alert(inputCity);
   searchWeather(inputCity);
   getCityID(inputCity);
 });
+
+function getrestaurant(city){
+   alert("Hello");
+  var inputCity = city.val().trim();
+alert(inputCity);
+  searchWeather(inputCity);
+  getCityID(inputCity);
+}
